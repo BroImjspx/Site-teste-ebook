@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balanço Positivo — Ebook de finanças, investimentos e patrimônio</title>
+<meta name="description" content="Balanço Positivo é um ebook digital sobre organização financeira, reserva de emergência, renda fixa, bolsa e fundos imobiliários, escrito de forma direta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F2E7;
+    --cream-2: #EEE5D4;
+    --ink: #18120D;
+    --ink-2: #2B2018;
+    --gold: #B8923C;
+    --gold-light: #DCC18A;
+    --text: #4A3C30;
+    --text-light: #F4EEE2;
+    --border: rgba(24, 18, 13, 0.12);
+    --border-light: rgba(244, 238, 226, 0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  section { scroll-margin-top: 84px; }
+
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  a { color: inherit; }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.1rem;
+    font-weight: 500;
+  }
+
+  .eyebrow-light { color: var(--gold-light); }
+
+  /* Botões */
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 0.85rem 1.9rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid var(--gold);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    background: var(--ink);
+    color: var(--gold-light);
+    border-color: var(--ink);
+  }
+
+  .btn-small { padding: 0.55rem 1.2rem; font-size: 0.85rem; }
+  .btn-large { padding: 1rem 2.6rem; font-size: 1.05rem; }
+
+  .btn-text {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+    transition: color 0.2s ease;
+  }
+
+  .btn-text:hover { color: var(--gold); }
+
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    background: var(--cream);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+  }
+
+  .header-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 1.1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .logo span { color: var(--gold); }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+  }
+
+  .site-nav ul {
+    display: flex;
+    gap: 1.8rem;
+    list-style: none;
+  }
+
+  .site-nav ul a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .site-nav ul a:hover { color: var(--gold); }
+
+  .nav-toggle { display: none; }
+
+  .nav-toggle-label {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    width: 26px;
+    z-index: 1001;
+  }
+
+  .nav-toggle-label span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--ink);
+  }
+
+  /* Hero */
+  .hero { padding: 5.5rem 0 5rem; }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    line-height: 1.06;
+    margin-bottom: 1.3rem;
+  }
+
+  .hero .lead {
+    font-size: 1.12rem;
+    max-width: 480px;
+    margin-bottom: 2.3rem;
+    color: var(--text);
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    flex-wrap: wrap;
+  }
+
+  /* "Capa" do ebook em CSS */
+  .book-stack {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 3 / 4;
+    margin: 0 auto;
+  }
+
+  .book-stack::before,
+  .book-stack::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+
+  .book-stack::after {
+    background: var(--cream-2);
+    transform: translate(18px, 18px);
+  }
+
+  .book-stack::before {
+    background: var(--ink-2);
+    border-color: var(--ink-2);
+    transform: translate(9px, 9px);
+  }
+
+  .book-cover {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: var(--ink);
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--cream);
+  }
+
+  .book-edition {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    color: var(--gold-light);
+  }
+
+  .book-title {
+    font-family: 'Fraunces', serif;
+    font-size: 2.3rem;
+    line-height: 1.15;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 1.3rem 0;
+  }
+
+  .book-title-accent { color: var(--gold); }
+
+  .book-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    font-size: 0.78rem;
+    color: rgba(244, 238, 226, 0.7);
+  }
+
+  .book-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 0.3rem 0.55rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    flex-shrink: 0;
+  }
+
+  /* Seções genéricas */
+  .section,
+  .section-dark,
+  .section-alt,
+  .cta-final {
+    padding: 5rem 0;
+  }
+
+  .section h2,
+  .section-alt h2 {
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    margin-bottom: 1.2rem;
+    max-width: 600px;
+  }
+
+  /* Seção escura */
+  .section-dark {
+    background: var(--ink-2);
+    color: var(--text-light);
+  }
+
+  .section-dark h2 {
+    color: var(--cream);
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    margin-bottom: 1.4rem;
+    max-width: 620px;
+  }
+
+  .section-dark p {
+    color: rgba(244, 238, 226, 0.82);
+    max-width: 680px;
+    margin-bottom: 1.1rem;
+    font-size: 1.02rem;
+  }
+
+  .ledger-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.4rem;
+    margin-top: 2.8rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .ledger-stat .num {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--gold);
+  }
+
+  .ledger-stat .label {
+    display: block;
+    margin-top: 0.4rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(244, 238, 226, 0.55);
+  }
+
+  /* Lista estilo "lançamentos" */
+  .ledger-list {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .ledger-item {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 1.6rem;
+    padding: 1.9rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .ledger-item .index {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--gold);
+    padding-top: 0.15rem;
+  }
+
+  .ledger-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .ledger-item p {
+    max-width: 620px;
+    font-size: 0.98rem;
+    color: var(--text);
+  }
+
+  /* Seção autor */
+  .section-alt { background: var(--cream-2); }
+
+  .author-card {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    max-width: 760px;
+    margin-top: 0.8rem;
+  }
+
+  .author-avatar {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .author-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .author-info p { font-size: 1rem; }
+
+  /* Galeria */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .gallery-item {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background: var(--cream-2);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* CTA final */
+  .cta-final {
+    background: var(--ink);
+    text-align: center;
+  }
+
+  .cta-final h2 {
+    color: var(--cream);
+    max-width: 640px;
+    margin: 0 auto 1.1rem;
+    font-size: clamp(2rem, 4vw, 2.6rem);
+  }
+
+  .cta-final p {
+    color: rgba(244, 238, 226, 0.82);
+    max-width: 600px;
+    margin: 0 auto 1.6rem;
+    font-size: 1.02rem;
+  }
+
+  .price {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--gold);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.9rem;
+  }
+
+  .price span {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: rgba(244, 238, 226, 0.55);
+    margin-left: 0.4rem;
+  }
+
+  .disclaimer {
+    margin-top: 1.8rem !important;
+    font-size: 0.8rem !important;
+    color: rgba(244, 238, 226, 0.45) !important;
+  }
+
+  /* Contato */
+  .contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 2.2rem;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .contact-item a {
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 1.05rem;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .contact-item a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  /* Footer */
+  .site-footer {
+    background: var(--ink-2);
+    color: rgba(244, 238, 226, 0.6);
+    padding: 1.8rem 0;
+    font-size: 0.85rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  /* Responsivo */
+  @media (max-width: 880px) {
+    .nav-toggle-label { display: flex; }
+
+    .site-nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .site-nav ul {
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+    }
+
+    .site-nav ul a {
+      display: block;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-nav .btn-primary {
+      margin: 1rem 1.5rem;
+      text-align: center;
+    }
+
+    .nav-toggle:checked ~ .site-nav { max-height: 420px; }
+
+    .hero-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero .lead { margin-left: auto; margin-right: auto; }
+    .hero-actions { justify-content: center; }
+    .book-stack { max-width: 260px; margin-top: 2.5rem; }
+
+    .author-card { flex-direction: column; gap: 1.3rem; }
+  }
+
+  @media (max-width: 700px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .ledger-item { grid-template-columns: 42px 1fr; gap: 1rem; }
+    .ledger-item .index { font-size: 1.1rem; }
+    .section, .section-dark, .section-alt, .cta-final { padding: 3.5rem 0; }
+    .hero { padding: 3.5rem 0 3rem; }
+  }
+
+  @media (max-width: 460px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#inicio" class="logo">Balanço <span>Positivo</span></a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">O material</a></li>
+        <li><a href="#conteudo">Conteúdo</a></li>
+        <li><a href="#autor">Autor</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a href="#ebook" class="btn-primary btn-small">Garantir o ebook</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="eyebrow">Ebook digital · finanças e investimentos</span>
+        <h1>Balanço<br>Positivo</h1>
+        <p class="lead">
+          Um guia direto sobre organizar o dinheiro que entra todo mês, entender as opções de investimento mais comuns no Brasil e tomar decisões com mais clareza — sem fórmula mágica e sem prometer ficar rico da noite pro dia.
+        </p>
+        <div class="hero-actions">
+          <a href="https://seulink-de-pagamento.com" class="btn-primary">Quero o meu exemplar</a>
+          <a href="#conteudo" class="btn-text">Ver o que tem dentro ↓</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="book-stack">
+          <div class="book-cover">
+            <span class="book-edition">EDIÇÃO 2026</span>
+            <div class="book-title">
+              <span>Balanço</span>
+              <span class="book-title-accent">Positivo</span>
+            </div>
+            <div class="book-footer">
+              <span>Guia de finanças<br>pessoais e investimentos</span>
+              <span class="book-badge">PDF</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE O MATERIAL -->
+  <section id="sobre" class="section-dark">
+    <div class="container">
+      <span class="eyebrow eyebrow-light">Sobre o material</span>
+      <h2>De onde vem esse conteúdo</h2>
+      <p>
+        Esse ebook começou como uma planilha pessoal. Com o tempo, ela foi ganhando abas, fórmulas e anotações sobre onde deixar a reserva de emergência, como comparar dois investimentos de renda fixa e por que vale revisar os gastos fixos de vez em quando.
+      </p>
+      <p>
+        Quando amigos pediram uma cópia — e, principalmente, ajuda pra entender como usá-la — essa planilha virou um guia. A proposta aqui não é prometer enriquecimento rápido, e sim organizar o que você já ganha e entender melhor as opções de investimento antes de colocar dinheiro em qualquer lugar.
+      </p>
+
+      <div class="ledger-stats">
+        <div class="ledger-stat">
+          <span class="num">06</span>
+          <span class="label">capítulos</span>
+        </div>
+        <div class="ledger-stat">
+          <span class="num">40+</span>
+          <span class="label">páginas</span>
+        </div>
+        <div class="ledger-stat">
+          <span class="num">PDF</span>
+          <span class="label">formato digital</span>
+        </div>
+        <div class="ledger-stat">
+          <span class="num">2026</span>
+          <span class="label">edição atual</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO / SUMÁRIO -->
+  <section id="conteudo" class="section">
+    <div class="container">
+      <span class="eyebrow">Sumário</span>
+      <h2>O que está dentro</h2>
+
+      <div class="ledger-list">
+        <div class="ledger-item">
+          <span class="index">01</span>
+          <div>
+            <h3>Organização antes de tudo</h3>
+            <p>Como mapear entradas, gastos fixos e dívidas em um único lugar, sem precisar de planilhas complicadas ou de apps que ninguém abre depois da primeira semana.</p>
+          </div>
+        </div>
+
+        <div class="ledger-item">
+          <span class="index">02</span>
+          <div>
+            <h3>Reserva de emergência</h3>
+            <p>Quanto guardar, em que tipo de investimento deixar esse dinheiro e por que essa etapa muda o resto do plano financeiro.</p>
+          </div>
+        </div>
+
+        <div class="ledger-item">
+          <span class="index">03</span>
+          <div>
+            <h3>Renda fixa sem mistério</h3>
+            <p>As diferenças entre Tesouro Direto, CDB e LCI/LCA, e como escolher entre eles de acordo com o seu prazo e objetivo.</p>
+          </div>
+        </div>
+
+        <div class="ledger-item">
+          <span class="index">04</span>
+          <div>
+            <h3>Primeiros passos na bolsa</h3>
+            <p>Como abrir conta em uma corretora, o que é um home broker e o que vale considerar antes da primeira ordem de compra.</p>
+          </div>
+        </div>
+
+        <div class="ledger-item">
+          <span class="index">05</span>
+          <div>
+            <h3>Fundos imobiliários</h3>
+            <p>O que são cotas, como funciona o pagamento de dividendos e pontos pra observar antes de investir em um FII.</p>
+          </div>
+        </div>
+
+        <div class="ledger-item">
+          <span class="index">06</span>
+          <div>
+            <h3>Erros que custam caro com o tempo</h3>
+            <p>Hábitos financeiros comuns que parecem inofensivos no dia a dia, mas que fazem diferença real no patrimônio depois de alguns anos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTOR -->
+  <section id="autor" class="section-alt">
+    <div class="container">
+      <span class="eyebrow">Quem escreveu</span>
+      <h2>Sobre o autor</h2>
+
+      <div class="author-card">
+        <div class="author-avatar">RA</div>
+        <div class="author-info">
+          <h3>Rafael Andrade</h3>
+          <p>
+            Rafael trabalha com organização financeira e investimentos há alguns anos e costuma ser a pessoa que os amigos chamam quando a dúvida é "onde eu deveria colocar esse dinheiro". Depois de responder essa pergunta de jeitos diferentes várias vezes, decidiu reunir tudo num material só — este ebook.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="section">
+    <div class="container">
+      <span class="eyebrow">Galeria</span>
+      <h2>Um pouco do universo do material</h2>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=900&auto=format&fit=crop" alt="Notebook aberto mostrando gráficos sobre uma mesa de madeira" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=900&auto=format&fit=crop" alt="Mão apontando para um gráfico de crescimento em uma tela" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=900&auto=format&fit=crop" alt="Painel com cotações do mercado financeiro em tons escuros" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?q=80&w=900&auto=format&fit=crop" alt="Vista de prédios do centro financeiro ao entardecer" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=900&auto=format&fit=crop" alt="Barras de ouro empilhadas" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1565514020179-026b92b2d70b?q=80&w=900&auto=format&fit=crop" alt="Notas de dinheiro organizadas sobre uma superfície escura" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="ebook" class="cta-final">
+    <div class="container">
+      <span class="eyebrow eyebrow-light">Disponível em PDF</span>
+      <h2>Pronto pra organizar as contas?</h2>
+      <p>
+        O Balanço Positivo chega por e-mail poucos minutos depois da confirmação do pagamento. É só abrir no celular, no tablet ou no computador e começar pelo capítulo que fizer mais sentido pra sua situação agora.
+      </p>
+      <div class="price">R$ 29,90 <span>· pagamento único</span></div>
+      <a href="https://seulink-de-pagamento.com" class="btn-primary btn-large">Quero o meu exemplar</a>
+      <p class="disclaimer">Conteúdo educacional. Não constitui recomendação de investimento.</p>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="section">
+    <div class="container">
+      <span class="eyebrow">Contato</span>
+      <h2>Ficou com alguma dúvida?</h2>
+      <p style="margin-bottom: 0.5rem;">Fala com a gente por qualquer um desses canais.</p>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span class="contact-label">E-mail</span>
+          <a href="mailto:contato@balancopositivo.com.br">contato@balancopositivo.com.br</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">WhatsApp</span>
+          <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">(00) 00000-0000</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Instagram</span>
+          <a href="https://instagram.com/balancopositivo" target="_blank" rel="noopener">@balancopositivo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 2026 Balanço Positivo</span>
+    <span>Conteúdo educacional · não constitui recomendação de investimento</span>
+  </div>
+</footer>
+
+</body>
+</html>
